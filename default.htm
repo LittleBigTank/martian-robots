@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="Alex McCormick">
+
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="stylesheet" href="css/master.tablet.css" />
+    <link rel="stylesheet" href="css/master.mobile.css" />
+
+    <title>Martian Robot</title>
+  </head>
+  <body>
+    <div id="siteWrapper">
+      <div class="panel">
+        <img src="img/curiosity.png" alt="" />
+        <h1>Martian Robot</h1>
+        <textarea id="instructions" cols="50" rows="10"></textarea>
+      </div>
+      <a onclick="submitInstructions()" class="submit">Submit</a>
+      <div id="output"></div>
+    </div>
+
+    <script src="vendor/jquery-1.10.2.min.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/planet.js"></script>
+    <script src="js/robot.js"></script>
+    <script src="js/expeditionCenter.js"></script>
+  </body>
+</html>

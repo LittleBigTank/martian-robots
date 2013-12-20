@@ -1,0 +1,18 @@
+/* -- Responsive - Mobile ------ */
+@media(max-width: 599px) {
+  .panel {
+    width: 100%;
+    margin-top: 0px;
+  }
+  .panel h1 {
+    margin: 0px 0px 10px;
+    text-align: center;
+  }
+  .panel img {
+    display: none;
+  }
+  .panel textarea {
+    width: 100%;
+    padding: 10px;
+  }
+}

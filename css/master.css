@@ -1,0 +1,166 @@
+/* -- HTML5  ------------ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+
+
+/* -- General ------------ */
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #fcfcfc;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 62.5%;
+  color: #333;
+  margin: 0px;
+}
+
+a  {
+  cursor: pointer;
+}
+
+h1 {
+  color: #690066;
+  font-size: 2.8em;
+}
+
+
+/* -- Structure ------------ */
+#siteWrapper {
+  text-align: center;
+  margin: 20px auto;
+  padding: 0px 20px;
+}
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: ".";
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+
+
+/* -- Page ------------ */
+.panel {
+  position: relative;
+  width: 600px;
+  margin: 100px auto 0px;
+}
+.panel h1 {
+  margin: 0px 0px 6px 270px;
+  text-align: left;
+  text-shadow: 1px 1px #ccc;
+}
+.panel img {
+  position: absolute;
+  left: -10px;
+  top: -110px;
+  width: 340px;
+}
+.panel textarea {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1.4em;
+  resize: none;
+  padding: 50px 20px 20px;
+  border: 1px solid #666;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 12px #999;
+  -moz-box-shadow: 0px 0px 12px #999;
+  box-shadow: 0px 0px 12px #999;
+}
+
+#message {
+  display: none;
+  font-size: 1.6em;
+  margin-top: 20px;
+}
+
+a.submit {
+  display: inline-block;
+  font-size: 1.8em;
+  color: #fff;
+  padding: 10px 20px;
+  background: #690066;
+  margin-top: 20px;
+  border: 1px solid #690066;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 4px #999;
+  -moz-box-shadow: 0px 0px 4px #999;
+  box-shadow: 0px 0px 4px #999;
+}
+
+#output {
+  display: none;
+  width: 320px;
+  font-size: 1.4em;
+  border-top: 1px solid #333;
+  margin: 20px auto 0px;
+}
+#output p {
+  margin: 10px 0px;
+}
+
+
+
+/*
+#planet {
+  margin: 20px auto 0px;
+}
+.planetBlock {
+  display: inline-block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  font-size: 1px;
+  background: #999;
+  margin: 0px 2px 2px 0px;
+}
+.planetBlock.first {
+  clear: both;
+}
+.planetBlock.robot {
+  background: #ff0000;
+}
+.planetBlock.scent {
+  background: #00ff00;
+}
+*/
