@@ -1,4 +1,5 @@
 Martian Robots
+================
 
 To run a Mars Expedition open "default.htm" in a browser with javascript enabled.
 To run the tests open "test.htm" in a browser with javascript enabled.
