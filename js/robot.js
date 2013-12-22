@@ -101,11 +101,23 @@ Robot.prototype = {
     return this.directions[this.dir];
   },
 
+  /* -- set robots status ------ */
+  setStatus: function(status) {
+    this.status = status;
+  },
+
+  /* -- output robots status ------ */
+  getStatus: function() {
+    return this.status;
+  },
+
   /* -- perform all store instructions ------ */
   performAllInstructions: function() {
+    this.checkOnPlanet();
+
     for(var i=0; i<this.getInstructionsCount(); i++) {
       /* -- check robot is not lost ------ */
-      if (this.status == "Alive")
+      if (this.getStatus() == "Alive")
         this.performInstruction(this.getInstruction(i));
     }
   },
@@ -171,19 +183,24 @@ Robot.prototype = {
           break;
       }
 
-      if (this.expeditionCenter != undefined) {
-        /* -- check robot isn't lost ------ */
-        if (!this.expeditionCenter.planet.onPlanet(this.getX(), this.getY())) {
-          this.status = "Lost";
-          this.expeditionCenter.addScent(this.getPreviousPosition());
-        }
+      this.checkOnPlanet();
+    }
+  },
+
+  /* -- check robot is still on the planet ------ */
+  checkOnPlanet: function() {
+    if (this.expeditionCenter != undefined) {
+      /* -- check robot isn't lost ------ */
+      if (!this.expeditionCenter.planet.onPlanet(this.getX(), this.getY())) {
+        this.setStatus("Lost");
+        this.expeditionCenter.addScent(this.getPreviousPosition());
       }
     }
   },
 
   /* -- output robot position/status ------ */
   output: function() {
-    if (this.status == "Lost")
+    if (this.getStatus() == "Lost")
       return this.getPreviousX() +" "+ this.getPreviousY() +" "+ this.getDirection() + " LOST";
 
     return this.getX() +" "+ this.getY() +" "+ this.getDirection();

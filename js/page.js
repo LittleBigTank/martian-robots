@@ -3,11 +3,14 @@ var expeditionCenter;
 /* -- submit instructions ------ */
 function submitInstructions() {
   $("#output").html("");
+  $("#example").hide();
 
   var instructions = $("#instructions").val().split("\n");
   var output = createObjects(instructions);
-  if (output != true)
+  if (output != true) {
     $("#output").html(output);
+    $("#example").show();
+  }
   else
     $("#output").html(performInstructions());
 
@@ -20,10 +23,11 @@ function createObjects(instructions) {
   var planet = new Planet();
   var success = planet.setSizeByString(instructions[0]);
   if (!success)
-    return "<p>Planet input values are invalid</p>";
+    return "<p>Planet input values are invalid.</p>";
 
   expeditionCenter = new ExpeditionCenter(planet);
   var nextLineCreate = true;
+  var robotCount = 0;
   var robot;
 
   /* -- loop through lines to create robots ------ */
@@ -34,6 +38,7 @@ function createObjects(instructions) {
 
     /* -- create robot ------ */
     } else if (nextLineCreate) {
+      robotCount++;
       nextLineCreate = false;
       robot = new Robot();
       success = robot.init(instructions[i]);
@@ -47,7 +52,7 @@ function createObjects(instructions) {
     }
 
     if (!success)
-      return "<p>Robot "+ Math.ceil((i-1)/3) +"s inputs are invalid</p>";
+      return "<p>Robot "+ robotCount +"s inputs are invalid.</p>";
   }
 
   return true;

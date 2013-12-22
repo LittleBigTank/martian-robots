@@ -84,15 +84,15 @@ h1 {
   margin: 100px auto 0px;
 }
 .panel h1 {
-  margin: 0px 0px 6px 270px;
+  margin: 0px 0px 6px 260px;
   text-align: left;
   text-shadow: 1px 1px #ccc;
 }
 .panel img {
   position: absolute;
-  left: -10px;
-  top: -110px;
-  width: 340px;
+  left: 30px;
+  top: -90px;
+  width: 220px;
 }
 .panel textarea {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -105,12 +105,6 @@ h1 {
   -webkit-box-shadow: 0px 0px 12px #999;
   -moz-box-shadow: 0px 0px 12px #999;
   box-shadow: 0px 0px 12px #999;
-}
-
-#message {
-  display: none;
-  font-size: 1.6em;
-  margin-top: 20px;
 }
 
 a.submit {
@@ -133,34 +127,21 @@ a.submit {
   width: 320px;
   font-size: 1.4em;
   border-top: 1px solid #333;
+  padding-top: 10px;
   margin: 20px auto 0px;
 }
 #output p {
-  margin: 10px 0px;
+  padding: 10px 0px;
+  margin: 0px;
 }
 
-
-
-/*
-#planet {
-  margin: 20px auto 0px;
+#example {
+  display: none;
+  width: 320px;
+  font-size: 1.4em;
+  margin: 0px auto;
 }
-.planetBlock {
-  display: inline-block;
-  float: left;
-  width: 20px;
-  height: 20px;
-  font-size: 1px;
-  background: #999;
-  margin: 0px 2px 2px 0px;
+#example p {
+  padding: 10px 0px;
+  margin: 0px;
 }
-.planetBlock.first {
-  clear: both;
-}
-.planetBlock.robot {
-  background: #ff0000;
-}
-.planetBlock.scent {
-  background: #00ff00;
-}
-*/

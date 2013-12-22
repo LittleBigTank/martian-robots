@@ -183,6 +183,13 @@ describe("Robot", function() {
   });
 
   describe("functions", function() {
+    it("set status", function() {
+      var robot = new Robot();
+      expect(robot.getStatus()).to.equal("Alive");
+      robot.setStatus("Lost");
+      expect(robot.getStatus()).to.equal("Lost");
+    });
+
     it("set 0 instructions", function() {
       var robot = new Robot();
       var success = robot.setInstructions("");
@@ -219,6 +226,30 @@ describe("Robot", function() {
       var robot = new Robot();
       robot.status = "Lost"
       expect(robot.output()).to.equal("0 0 N LOST");
+    });
+
+    it("check on planet - fail", function() {
+      var planet = new Planet();
+      planet.setSizeByString("5 5");
+      var expeditionCenter = new ExpeditionCenter(planet);
+      var robot = new Robot();
+      robot.init("6 5 N");
+      expeditionCenter.addRobot(robot);
+      robot.checkOnPlanet();
+
+      expect(robot.status).to.equal("Lost");
+    });
+
+    it("check on planet - success", function() {
+      var planet = new Planet();
+      planet.setSizeByString("5 5");
+      var expeditionCenter = new ExpeditionCenter(planet);
+      var robot = new Robot();
+      robot.init("5 5 N");
+      expeditionCenter.addRobot(robot);
+      robot.checkOnPlanet();
+
+      expect(robot.status).to.equal("Alive");
     });
 
     it("moving forward will drop the robot off the planet", function() {
