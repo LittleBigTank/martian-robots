@@ -21,7 +21,7 @@ function submitInstructions() {
 function createObjects(instructions) {
   /* -- first line is the planet ------ */
   var planet = new Planet();
-  var success = planet.setSizeByString(instructions[0]);
+  var success = planet.setSizeByString(instructions[0].trim());
   if (!success)
     return "<p>Planet input values are invalid.</p>";
 
@@ -41,13 +41,13 @@ function createObjects(instructions) {
       robotCount++;
       nextLineCreate = false;
       robot = new Robot();
-      success = robot.init(instructions[i]);
+      success = robot.init(instructions[i].trim());
       if (success)
         expeditionCenter.addRobot(robot);
 
     /* -- add instructions to the robot ------ */
     } else if (robot != undefined) {
-      success = robot.setInstructions(instructions[i]);
+      success = robot.setInstructions(instructions[i].trim());
       robot = undefined;
     }
 
