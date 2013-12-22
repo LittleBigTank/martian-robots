@@ -2,6 +2,7 @@ Robot = function() {
   this.status = "Alive";
   this.instructions = [];
   this.validInstructions = ["L", "R", "F"];
+  this.maxInstructionsLength = 100;
   this.directions = ["N", "E", "S", "W"];
   this.dir = 0;
   this.prevX = 0;
@@ -30,7 +31,7 @@ Robot.prototype = {
 
   /* -- store instructions for robot ------ */
   setInstructions: function(input) {
-    if (input.length == 0)
+    if (input.length == 0 || input.length > this.maxInstructionsLength)
       return false;
 
     var instructions = input.split("");

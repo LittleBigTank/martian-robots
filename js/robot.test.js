@@ -211,6 +211,20 @@ describe("Robot", function() {
       expect(robot.getInstructionsCount()).to.equal(5);
     });
 
+    it("set 100 instructions", function() {
+      var robot = new Robot();
+      var success = robot.setInstructions("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+      expect(success).to.equal(true);
+      expect(robot.getInstructionsCount()).to.equal(100);
+    });
+
+    it("set more than 100 instructions", function() {
+      var robot = new Robot();
+      var success = robot.setInstructions("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+      expect(success).to.equal(false);
+      expect(robot.getInstructionsCount()).to.equal(0);
+    });
+
     it("get instruction", function() {
       var robot = new Robot();
       robot.setInstructions("RRFFL");
