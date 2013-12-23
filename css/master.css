@@ -123,7 +123,6 @@ a.submit {
 }
 
 #output {
-  display: none;
   width: 320px;
   font-size: 1.4em;
   border-top: 1px solid #333;
